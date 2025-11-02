@@ -1,0 +1,29 @@
+# SIMPLE TEST CASES - Basic Functionality
+# Tests core functionality with straightforward scenarios
+
+# Test 1: copyString - Basic string operations
+TEST_COPY Hello
+TEST_COPY World
+TEST_COPY Test
+
+# Test 2: findMenuItem - Basic search operations
+TEST_FIND Pizza_Margherita 0
+TEST_FIND Caesar_Salad 1
+TEST_FIND NotFound -1
+
+# Test 3: calculateSum - Simple arithmetic
+TEST_SUM 10.0 10.00
+TEST_SUM 5.0,15.0 20.00
+TEST_SUM 10.0,20.0,30.0 60.00
+
+# Test 4: addMenuItem - Valid additions
+TEST_ADD New_Pizza Main 12.99 SUCCESS
+TEST_ADD Soup Appetizer 8.50 SUCCESS
+TEST_ADD Ice_Cream Dessert 5.75 SUCCESS
+
+# Test 5: processOrder - Simple orders
+TEST_ORDER 10.0:1 10.00,1.00,11.00
+TEST_ORDER 15.0,25.0:1,1 40.00,4.00,44.00
+
+# Test 6: sortMenu - Basic sorting
+TEST_SORT PRICE

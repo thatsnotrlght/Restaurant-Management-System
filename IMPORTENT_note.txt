@@ -1,0 +1,11 @@
+- You are required to implement the provided skeleton code files.
+
+- Please rename each file by removing the word "skeleton" from the filename.
+  For example:
+      👉 calculateSum_skeleton.c → calculateSum.c
+
+- Place all renamed files in the same directory as the rest of the framework files to ensure proper testing of your implementation.
+
+- Do not modify any files in the Framework directory, except for the following:
+  TESTCASES.txt – to paste the test cases you want to run
+  EXPECTED_OUTPUT.txt – to paste the expected output corresponding to the test cases in EXPECTED_OUTPUT.txt
