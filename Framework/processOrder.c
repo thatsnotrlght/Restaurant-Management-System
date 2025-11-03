@@ -80,5 +80,5 @@ void processOrder(float* prices, int* quantities, int menuSize,
     // Safety Tip: Check loop counter against MAX_LOOP_ITERATIONS constant
     
     // Your implementation here:
-    
+    return 0;
 }

@@ -89,7 +89,6 @@ int findMenuItem(char names[][MAX_NAME_LENGTH], int count, const char* searchNam
         if (strncmp(names[i], searchName, MAX_NAME_LENGTH) == 0) {
             return i;
         }
-        count++;
     }
 
     return ITEM_NOT_FOUND;

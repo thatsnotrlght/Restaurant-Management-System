@@ -63,5 +63,24 @@ float calculateSum(float* prices, int count) {
     // Safety tip: Check loop counter against MAX_LOOP_ITERATIONS constant
     
     // Your implementation here:
-    
+    float sum = 0.0;
+    if (prices == NULL) {
+        return 0.0;
+    }
+
+    if (count <= 0 || count > MAX_LOOP_ITERATIONS   ) {
+        return 0.0;
+    }
+
+    for (int i = 0; i < count; i++) {
+        if (i >= MAX_LOOP_ITERATIONS) {
+            return 0.0;
+        }
+
+        sum = sum + *prices;
+        prices++;
+
+    }
+
+    return sum;
 }

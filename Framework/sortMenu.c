@@ -95,5 +95,5 @@ void sortMenu(char names[][MAX_NAME_LENGTH],
     // Safety Tip: Check loop counter against MAX_LOOP_ITERATIONS constant
     
     // Your implementation here:
-    
+    return 0;
 }
