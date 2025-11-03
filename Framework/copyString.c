@@ -50,5 +50,15 @@ void copyString(char* dest, const char* src) {
     // Note: No array indexing allowed - pure pointer arithmetic only
     
     // Your implementation here:
-    
+    if (dest == NULL || src == NULL) {
+        return;
+    }
+
+    while (*src != '\0') {
+        *dest = *src;
+        dest++;
+        src++;
+    }
+
+    *dest = '\0';
 }
