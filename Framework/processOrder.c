@@ -80,5 +80,30 @@ void processOrder(float* prices, int* quantities, int menuSize,
     // Safety Tip: Check loop counter against MAX_LOOP_ITERATIONS constant
     
     // Your implementation here:
-    return 0;
+    float subtotal_calc = 0.0;
+    int i;
+    if (prices == NULL || quantities == NULL || subtotal == NULL || tax == NULL || total == NULL) {
+        return;
+    }
+
+    if (menuSize <= 0) {
+        *subtotal = 0.0;
+        *tax = 0.0;
+        *total = 0.0;
+        return;
+    }
+
+    for (i = 0; i < menuSize; i++) {
+        if (i >= MAX_LOOP_ITERATIONS) {
+            return;
+        }
+        if (quantities[i] > 0) {
+            subtotal_calc += prices[i] * quantities[i];
+        }
+    }
+
+    *subtotal = subtotal_calc;
+
+    *tax = (*subtotal * TAX_RATE);
+    *total = *tax + *subtotal;
 }
