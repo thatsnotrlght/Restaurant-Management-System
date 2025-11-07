@@ -70,15 +70,16 @@ int addMenuItem(char names[][MAX_NAME_LENGTH],
     // Remember: Use dereferencing (*) to access/modify count value through pointer
     
     // Your implementation here:
-    if (prices == NULL || name == NULL || category == NULL || count == NULL) {
+    if (names == NULL || categories == NULL || prices == NULL || 
+    name == NULL || category == NULL || count == NULL) {
+    return OPERATION_FAILURE;
+    }
+
+    if (*name == '\0' || *category == '\0') {
         return OPERATION_FAILURE;
     }
 
-    if (name == '\0' || category == '\0') {
-        return OPERATION_FAILURE;
-    }
-
-    if (!(price >= MIN_PRICE && price <= MAX_PRICE)) {
+    if (price < MIN_PRICE || price > MAX_PRICE) {
         return OPERATION_FAILURE;
     }
 
@@ -87,14 +88,14 @@ int addMenuItem(char names[][MAX_NAME_LENGTH],
     }
 
     int index = *count;
-    strncpy(names[index],name,MAX_NAME_LENGTH);
+    strncpy(names[index], name, MAX_NAME_LENGTH - 1);
     names[index][MAX_NAME_LENGTH - 1] = '\0';
 
-    strncpy(categories[index],category,MAX_CATEGORY_LENGTH);
+    strncpy(categories[index], category, MAX_CATEGORY_LENGTH - 1);
     categories[index][MAX_CATEGORY_LENGTH - 1] = '\0';
 
-    (*count)++;
     prices[index] = price;
+    (*count)++;
 
     return OPERATION_SUCCESS;
 }
