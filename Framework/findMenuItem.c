@@ -75,7 +75,7 @@ int findMenuItem(char names[][MAX_NAME_LENGTH], int count, const char* searchNam
     // Your implementation here:
 
     if (names == NULL || searchName == NULL) {
-        return;
+        return ITEM_NOT_FOUND;
     }
 
     if (count < 0) {

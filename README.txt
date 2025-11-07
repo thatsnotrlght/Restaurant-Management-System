@@ -1,7 +1,26 @@
-Whether submitting as a group or individually, every submission must include a README file containing the following information:
-
 1. Full name(s) of group member(s). 
-2. Prefix the name of the corresponding team member with an asterisk (*).
-3. Panther ID (PID) of each member.
-4. FIU email address of each member.
-5. Include any relevant notes about compilation, execution, or the programming environment needed to test your assignment. 
+	* *Samuel Artiste*
+2. Panther ID (PID) of each member.
+	* *PID*: 6538723
+3. FIU email address of each member.
+	* *Email*: sarti015@fiu.edu
+
+4. COMPILATION AND EXECUTION NOTES:
+
+   * **Programming Environment**: This assignment was developed and tested on the **Ocelot Server (ocelot-bbhatkal.aul.fiu.edu)** running **Ubuntu 24.04 LTS** and compiled with **GCC/G++** using the **C17 standard**.
+   * **Compilation**: Use the provided `Makefile` to compile the application:
+     ```bash
+     make
+     ```
+   * **Execution**: Run the compiled executable to start the program (the driver will execute test cases from TESTCASES.txt):
+     ```bash
+     ./restaurant
+     ```
+   * **Testing/Grading**: Use the provided autograder scripts:
+     ```bash
+     # Grant Execute Permission (if needed)
+     chmod +x autograder_grade_system.sh batchgrader_grade_system.sh
+
+     # Run Autograder
+     ./autograder_grade_system.sh
+     ```

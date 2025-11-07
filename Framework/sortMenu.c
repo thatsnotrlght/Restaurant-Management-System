@@ -95,5 +95,100 @@ void sortMenu(char names[][MAX_NAME_LENGTH],
     // Safety Tip: Check loop counter against MAX_LOOP_ITERATIONS constant
     
     // Your implementation here:
-    return 0;
+    int i;
+    int sort_key = -1;
+    int safety_counter = 0;
+    float temp_price;
+    char temp_name[MAX_NAME_LENGTH];
+    char temp_cat[MAX_CATEGORY_LENGTH];
+    CompareFunction strategies[3] = {
+        compareByName,
+        compareByPrice,
+        compareByCategory
+    };
+
+    if (prices == NULL || names == NULL || categories == NULL || compare == NULL) {
+        return;
+    }
+
+    if (count <= 1) {
+        return;
+    }
+
+    for (i = 0; i < 3; i++) {
+        if (compare == strategies[i]) {
+            sort_key = i;
+            break;
+        }
+    }
+    if (sort_key == -1) {
+        return;
+    }
+
+    for (int i = 0; i < count - 1; i++) {
+        for (int j = 0; j < count - 1 - i; j++) {
+            safety_counter++;
+            if (safety_counter > MAX_LOOP_ITERATIONS) {
+                return;
+            }
+            if (sort_key == 2) {
+                if (compare(&categories[j], &categories[j + 1]) > 0) {
+                    temp_price = prices[j];
+                    prices[j] = prices[j + 1];
+                    prices[j + 1] = temp_price;
+
+                    strncpy(temp_cat, categories[j], MAX_CATEGORY_LENGTH);
+                    strncpy(categories[j], categories[j + 1], MAX_CATEGORY_LENGTH);
+                    strncpy(categories[j + 1], temp_cat, MAX_CATEGORY_LENGTH);
+                    categories[j][MAX_CATEGORY_LENGTH - 1] = '\0';
+                    categories[j + 1][MAX_CATEGORY_LENGTH - 1] = '\0';
+
+                    strncpy(temp_name, names[j], MAX_NAME_LENGTH);
+                    strncpy(names[j], names[j + 1], MAX_NAME_LENGTH);
+                    strncpy(names[j + 1], temp_name, MAX_NAME_LENGTH);
+                    names[j][MAX_NAME_LENGTH - 1] = '\0';
+                    names[j + 1][MAX_NAME_LENGTH - 1] = '\0';
+
+                }
+            } else if (sort_key == 1) {
+                if (compare(&prices[j], &prices[j + 1]) > 0) {
+                    temp_price = prices[j];
+                    prices[j] = prices[j + 1];
+                    prices[j + 1] = temp_price;
+
+                    strncpy(temp_cat, categories[j], MAX_CATEGORY_LENGTH);
+                    strncpy(categories[j], categories[j + 1], MAX_CATEGORY_LENGTH);
+                    strncpy(categories[j + 1], temp_cat, MAX_CATEGORY_LENGTH);
+                    categories[j][MAX_CATEGORY_LENGTH - 1] = '\0';
+                    categories[j + 1][MAX_CATEGORY_LENGTH - 1] = '\0';
+
+                    strncpy(temp_name, names[j], MAX_NAME_LENGTH);
+                    strncpy(names[j], names[j + 1], MAX_NAME_LENGTH);
+                    strncpy(names[j + 1], temp_name, MAX_NAME_LENGTH);
+                    names[j][MAX_NAME_LENGTH - 1] = '\0';
+                    names[j + 1][MAX_NAME_LENGTH - 1] = '\0';
+
+                }
+            } else if (sort_key == 0) {
+                if (compare(&names[j], &names[j + 1]) > 0) {
+                    temp_price = prices[j];
+                    prices[j] = prices[j + 1];
+                    prices[j + 1] = temp_price;
+
+                    strncpy(temp_cat, categories[j], MAX_CATEGORY_LENGTH);
+                    strncpy(categories[j], categories[j + 1], MAX_CATEGORY_LENGTH);
+                    strncpy(categories[j + 1], temp_cat, MAX_CATEGORY_LENGTH);
+                    categories[j][MAX_CATEGORY_LENGTH - 1] = '\0';
+                    categories[j + 1][MAX_CATEGORY_LENGTH - 1] = '\0';
+
+                    strncpy(temp_name, names[j], MAX_NAME_LENGTH);
+                    strncpy(names[j], names[j + 1], MAX_NAME_LENGTH);
+                    strncpy(names[j + 1], temp_name, MAX_NAME_LENGTH);
+                    names[j][MAX_NAME_LENGTH - 1] = '\0';
+                    names[j + 1][MAX_NAME_LENGTH - 1] = '\0';
+
+                }
+            }
+        }
+    }
 }
