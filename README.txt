@@ -1,7 +1,6 @@
 1. Full name(s) of group member(s). 
 	* *Samuel Artiste*
 
-
 4. COMPILATION AND EXECUTION NOTES:
 
    * **Programming Environment**: This assignment was developed and tested on the **Ocelot Server (ocelot-bbhatkal.aul.fiu.edu)** running **Ubuntu 24.04 LTS** and compiled with **GCC/G++** using the **C17 standard**.
